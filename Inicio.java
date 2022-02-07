@@ -285,6 +285,80 @@ public class Inicio {
 	
 	}
 	
+	//Given an array of integers, find the one that appears an odd number of times.
+	//There will always be only one integer that appears an odd number of times.
+	public static void desafio16(int[] arr) {
+		
+		 for (int i : arr) {
+			 
+			 int count=0;
+			 
+			 for(int j=0; j<arr.length;j++) {
+				 if(arr[j]==i) {
+					 count++;
+				 }
+			 }
+			 
+			 if(count%2!=0) {
+				 System.out.println(i);
+				 break;
+			 }
+		 
+		 }
+	}
+	
+	//method that takes an array of consecutive (increasing) letters as input and that returns the missing letter
+	public static void desafio17(String[] arr) {
+			
+		int ponto_inicio=0;
+		String res = "";
+		String[] alfabeto= {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"};
+	
+	
+		for(int i=0; i<alfabeto.length;i++) {
+			
+			if(alfabeto[i] == arr[0]) {
+				ponto_inicio = i;
+			}			
+		}
+		
+		int controle_arr= 0;
+		
+		for(int i=ponto_inicio; i<(ponto_inicio+arr.length);i++) {
+			
+			if(alfabeto[i]!=arr[controle_arr]) {
+				res = res+alfabeto[i];
+				break;
+			}
+			controle_arr++;
+			
+		}	
+	
+		System.out.println("A letra que falta eh: " + res);
+	}
+	
+
+	// write a function maskify, which changes all but the last four characters into '#'
+	public static void desafio18(String s) {
+		
+		String new_str = "";
+		
+		
+		for(int i=0; i<s.length();i++) {
+			
+			if(i>=s.length()-4) {
+				new_str = new_str + s.charAt(i);
+			}else {
+				new_str = new_str + "#";
+			}
+			
+		}
+		
+		System.out.println(new_str);
+		
+		
+	}
+	
 	
 	
 	
@@ -292,9 +366,9 @@ public class Inicio {
 	
 	
 	public static void main(String[] args) {
-
 		
 		
+ 		
 	}
 
 }
